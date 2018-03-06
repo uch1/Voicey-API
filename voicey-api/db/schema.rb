@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180227073423) do
+ActiveRecord::Schema.define(version: 20180306074801) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "memos", force: :cascade do |t|
+    t.string "title"
+    t.date "date"
+    t.text "text_body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "user"
+    t.string "references"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
