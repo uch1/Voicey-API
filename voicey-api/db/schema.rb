@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 20180306074801) do
     t.text "text_body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "user"
     t.string "references"
+
   end
 
   create_table "users", force: :cascade do |t|

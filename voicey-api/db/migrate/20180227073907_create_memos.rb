@@ -4,6 +4,7 @@ class CreateMemos < ActiveRecord::Migration[5.1]
       t.string :title
       t.date :date
       t.text :text_body
+      t.references :user
 
       t.timestamps
     end
