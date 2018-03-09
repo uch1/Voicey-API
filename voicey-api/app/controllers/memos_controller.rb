@@ -16,7 +16,8 @@ class MemosController < ApplicationController
   # POST /memos
   def create
     @memo = Memo.new(memo_params)
-
+    # Add the current logged in user as the creator of the memo
+    @memo.user = current_user
     if @memo.save
       render json: @memo, status: :created, location: @memo
     else
